@@ -1,5 +1,5 @@
 import { Box, Button, Typography, useTheme } from '@mui/material'
-import React, { useMemo, useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useGetKpisQuery } from '../../state/api';
 import DashboardBox from '../../components/DashboardBox';
 import FlexBetween from '../../components/FlexBetween';
@@ -9,9 +9,8 @@ import {
     ResponsiveContainer, LineChart, XAxis, YAxis, CartesianGrid, Legend, Line, Tooltip, Label 
 } from 'recharts';
 
-type Props = {}
 
-const Predictions = (props: Props) => {
+const Predictions = () => {
     const { palette } = useTheme();
     const [isPredictions, setIsPredictions] = useState(false);
 
@@ -64,7 +63,6 @@ const Predictions = (props: Props) => {
                     </YAxis>
                     <CartesianGrid vertical={false} stroke={palette.grey[800]} strokeDasharray="3 3" />
                     <Tooltip />
-                    {/* <Legend height={20} wrapperStyle={{margin: '0 0 10px 0'}} /> */}
                     <Legend verticalAlign='top' />
                     <Line type="monotone" dot={{ strokeWidth: 5 }} dataKey="Actual Revenue" stroke={palette.primary.main} strokeWidth={0} />
                     <Line type="monotone" dot={false} dataKey="Regression Line" stroke="#8884d8" />
