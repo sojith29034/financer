@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import DashboardBox from '../../components/DashboardBox'
 import BoxHeader from '../../components/BoxHeader'
 import { useGetKpisQuery } from '../../state/api'

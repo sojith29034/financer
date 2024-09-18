@@ -1,4 +1,4 @@
-import React, { useMemo }  from 'react'
+import { useMemo }  from 'react'
 import DashboardBox from '../../components/DashboardBox'
 import BoxHeader from '../../components/BoxHeader'
 import { useGetKpisQuery, useGetProductsQuery } from '../../state/api'
@@ -6,7 +6,7 @@ import { Box, Typography, useTheme } from '@mui/material'
 import FlexBetween from '../../components/FlexBetween'
 
 import { 
-  ResponsiveContainer, LineChart, XAxis, YAxis, CartesianGrid, Line, Tooltip, PieChart, Pie, Cell,ScatterChart, ZAxis, Scatter, Legend
+  ResponsiveContainer, LineChart, XAxis, YAxis, CartesianGrid, Line, Tooltip, PieChart, Pie, Cell,ScatterChart, ZAxis, Scatter
 } from 'recharts'
 
 const pieData = [
@@ -14,7 +14,7 @@ const pieData = [
   { name: "Group B", value: 400 },
 ];
 
-const Row2 = (props: Props) => {
+const Row2 = () => {
   const { palette } = useTheme();
   const pieColors = [palette.primary[800], palette.primary[300]];
 
@@ -71,7 +71,7 @@ const Row2 = (props: Props) => {
                       margin={{ top: 0, right: -10, left: 10, bottom: 0 }}>
               <Pie data={pieData} dataKey="value" innerRadius={18} outerRadius={38} stroke='none' paddingAngle={2}>
                 {pieData.map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={pieColors[index]} />
+                  <Cell key={`cell-${entry}`} fill={pieColors[index]} />
                 ))}
               </Pie>
             </PieChart>

@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import { useMemo } from 'react'
 import DashboardBox from '../../components/DashboardBox'
 import { useGetKpisQuery, useGetProductsQuery, useGetTransactionsQuery } from '../../state/api';
 import { Box, Typography, useTheme } from '@mui/material';
@@ -100,7 +100,7 @@ const Row3 = () => {
                 <PieChart width={90} height={70}>
                   <Pie data={data} dataKey="value" innerRadius={15} outerRadius={30} stroke='none' paddingAngle={2}>
                     {data.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={pieColors[index]} />
+                      <Cell key={`cell-${entry}`} fill={pieColors[index]} />
                     ))}
                   </Pie>
                 </PieChart>
